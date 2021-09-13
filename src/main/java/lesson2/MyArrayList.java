@@ -147,9 +147,7 @@ public class MyArrayList<T extends Comparable<T>> {
         if(size == capacity){
             capacity = (int) Math.floor(list.length * 1.5 + 1);
             T[] newList = (T[]) new Comparable[capacity];
-            for (int i = 0; i < size; i++){
-                newList[i] = list[i];
-            }
+            System.arraycopy(list, 0, newList, 0, size);
             list = newList;
         }
     }
